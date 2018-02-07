@@ -1,1 +1,3 @@
-console.log('\'Allo \'Allo!');
+const sliderFunction = require('./slider.js');
+
+sliderFunction();
