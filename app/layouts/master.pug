@@ -16,6 +16,12 @@ html.no-js(lang='')
         // build:js scripts/vendor/modernizr.js
         script(src='/bower_components/modernizr/modernizr.js')
         // endbuild
+        // build:css scripts/vendor/owl.carousel.css
+        link(rel="stylesheet", href="/bower_components/owl.carousel/dist/assets/owl.carousel.min.css")
+        // endbuild
+        // build:css scripts/vendor/lightbox.css
+        link(href="/bower_components/lightbox2/dist/css/lightbox.min.css", rel="stylesheet")
+        // endbuild
     body
         <!--[if lt IE 10]>
             p.browserupgrade
@@ -31,6 +37,9 @@ html.no-js(lang='')
         // build:js scripts/vendor.js
         // bower:js
         script(src='/bower_components/modernizr/modernizr.js')
+        script(src='/bower_components/jquery/dist/jquery.min.js')
+        script(src='/bower_components/owl.carousel/dist/owl.carousel.min.js')
+        script(src='/bower_components/lightbox2/dist/js/lightbox.min.js')
         // endbower
         // endbuild
         // build:js scripts/main.js

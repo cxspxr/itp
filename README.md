@@ -4,8 +4,20 @@
 
 Assuming you have already installed `NodeJS`, `npm`:
 
+#### Bower installation (run with sudoer permissions)
+```bash
+npm i -g bower
+```
+
+#### Gulp installation (run with sudoer permissions)
+```bash
+npm i -g gulp
+```
+
+#### Dependencies installation
 ```bash
 npm i
+bower install
 ```
 
 ## Working locally:
