@@ -50,6 +50,7 @@
   "dependencies": {
     "babelify": "^8.0.0",
     "browserify": "^16.0.0",
+    "gulp-pug": "^3.3.0",
     "gulp-stylus": "^2.7.0",
     "rupture": "^0.7.1",
     "vinyl-buffer": "^1.0.1",
