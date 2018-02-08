@@ -4,4 +4,3 @@ bower_components
 test/bower_components
 .editorconfig
 dist
-config/config.js
