@@ -1,27 +1,23 @@
-.header-nav
-    list-style-type none
-    margin 0
-    padding 0
-    overflow hidden
+.header
     background-color grey
-    
-    &-logo
-        float left
-        padding 20px 20px
 
-    &-item
-        float right
+    &-nav
+        list-style-type none
+        margin 0
+        overflow hidden
+        display flex
+        justify-content space-between
+        padding 20px 0
 
-        :hover
-            background-color rgb(112, 92, 72)
+        &-items
+            a
+                color white
+                text-align center
+                padding 20px 20px
+                text-decoration none
 
-        a
-            display block
-            color white
-            text-align center
-            padding 20px 20px
-            text-decoration none
+                +below($mobile-width)
+                    padding 20px 10px
 
-@media screen and (max-width: $mobile-width)
-    .header-nav
-        font-size 10px
+                &:hover
+                    background-color rgb(112, 92, 72)

@@ -4,3 +4,14 @@ html
 
 *
     box-sizing border-box
+
+.container
+    max-width 1050px
+    margin 0 auto
+    padding 0 7px
+
+    +below($tablet-width)
+        max-width 740px
+
+    +below($mobile-width)
+        max-width 95vw
