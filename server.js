@@ -3,6 +3,7 @@ const serveStatic = require('serve-static');
 const compression = require('compression');
 const port = process.env.PORT || 3000;
 const domain =  process.env.DOMAIN;
+const models = require('models');
 
 function ensureDomain(req, res, next) {
   if (!domain || req.hostname === domain) {
@@ -20,6 +21,8 @@ app.use(compression());
 
 app.use(serveStatic(`${__dirname}/dist`, {'extensions': ['html']}));
 
-app.listen(port, () => {
-  console.log('Server running...');
+models.sequelize.sync().then(function() {
+    app.listen(port, () => {
+      console.log('Server running...');
+    });
 });
