@@ -2,7 +2,8 @@
 
 module.exports = (sequelize, DataTypes) => {
   var Picture = sequelize.define('Picture', {
-    path: DataTypes.STRING
+    path: DataTypes.STRING,
+    timestamps: false
   }, {
     classMethods: {
       associate: function(models) {
