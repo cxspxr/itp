@@ -114,7 +114,7 @@ gulp.task('extras', () => {
   }).pipe(gulp.dest('dist/public'));
 });
 
-gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
+gulp.task('clean', del.bind(null, ['.tmp', 'dist/public']));
 
 gulp.task('serve', () => {
   runSequence(['clean', 'wiredep'], ['views', 'styles', 'scripts', 'fonts', 'images'], () => {
