@@ -50,9 +50,12 @@
   "dependencies": {
     "babelify": "^8.0.0",
     "browserify": "^16.0.0",
+    "gulp-nodemon": "^2.2.1",
     "gulp-pug": "^3.3.0",
     "gulp-stylus": "^2.7.0",
     "rupture": "^0.7.1",
+    "sequelize": "^4.33.1",
+    "sequelize-cli": "^3.2.0",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
   }
