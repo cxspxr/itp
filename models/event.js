@@ -5,14 +5,14 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     picture: DataTypes.STRING,
     description: DataTypes.TEXT,
-    date: DataTypes.DATE,
-    timestamps: false
+    date: DataTypes.DATE
   }, {
     classMethods: {
       associate: function(models) {
           Event.hasMany(models.Picture, {as: "Pictures"});
       }
-    }
+    },
+    timestamps: false
   });
 
   return Event;

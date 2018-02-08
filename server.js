@@ -4,6 +4,7 @@ const compression = require('compression');
 const port = process.env.PORT || 3000;
 const domain =  process.env.DOMAIN;
 const models = require('./models');
+const router  = express.Router();
 
 function ensureDomain(req, res, next) {
   if (!domain || req.hostname === domain) {
@@ -17,9 +18,17 @@ const app = express();
 
 app.all('*', ensureDomain);
 
-app.use(compression());
+router.get('/', function(req, res) {
+  models.Event.findAll({
+    include: [ models.Picture ]
+  }).then(function(users) {
+    res.render('index', {
+      events: events
+    });
+  });
+});
 
-app.use(serveStatic(`${__dirname}/dist`, {'extensions': ['html']}));
+app.use(compression());
 
 models.sequelize.sync().then(function() {
     app.listen(port, () => {
