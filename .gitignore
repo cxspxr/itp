@@ -3,5 +3,5 @@ node_modules
 bower_components
 test/bower_components
 .editorconfig
-config/config.json
 dist
+config/config.js
