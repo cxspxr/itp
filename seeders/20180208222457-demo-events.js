@@ -16,17 +16,18 @@ module.exports = {
         {
           name: 'Event',
           description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt veritatis sunt aliquam pariatur similique sint sit saepe. Quia dicta commodi nobis inventore numquam atque accusamus itaque facere, debitis architecto provident.',
-          date: (new Date()).toMysqlFormat()
+          date: (new Date(2011, 10, 7)).toMysqlFormat(),
+
         },
         {
           name: 'Another event',
           description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam blanditiis, nobis similique. Dolorum assumenda facere inventore, voluptates iste veritatis aut quae nisi voluptatibus, aspernatur a magni quasi, illum eveniet, nam?',
-          date: (new Date()).toMysqlFormat()
+          date: (new Date(2048, 10, 8)).toMysqlFormat()
         },
         {
           name: 'Third Event',
           description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque assumenda sapiente est obcaecati distinctio facere dolorem pariatur suscipit, quas libero ipsum. Eius saepe autem, voluptatibus veritatis quae explicabo nisi soluta.',
-          date: (new Date()).toMysqlFormat()
+          date: (new Date(2023, 8, 7)).toMysqlFormat()
         }], {});
   },
 
