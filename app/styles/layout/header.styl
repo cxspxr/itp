@@ -4,25 +4,20 @@
     &-nav
         list-style-type none
         margin 0
-        padding 0
         overflow hidden
+        display flex
+        justify-content space-between
+        padding 20px 0
 
-        +below($mobile-width)
-            font-size 10px
-
-        &-logo
-            float left
-            padding 20px 20px
-
-        &-item
-            float right
-
-            :hover
-                background-color rgb(112, 92, 72)
-
+        &-items
             a
-                display block
                 color white
                 text-align center
                 padding 20px 20px
                 text-decoration none
+
+                +below($mobile-width)
+                    padding 20px 10px
+
+                &:hover
+                    background-color rgb(112, 92, 72)

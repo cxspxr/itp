@@ -1,23 +1,30 @@
 .poster
-    display flex
-    border 1px solid black
-    padding-bottom 100px
+    border-bottom 1px solid black
+    padding 20px 0
+
+    &-container
+        display flex
+
+        +below($mobile-width)
+            flex-direction column
+            padding 30px 10px
+            align-items center
+
+    &-text
+        width 100%
+
+    &-img
+        width 100%
 
     &-text
         width 70%
         text-align center
 
+        +below($mobile-width)
+            width auto
+
     &-img
     	width 30%
 
-@media screen and (max-width: $mobile-width)
-	.poster
-		flex-direction column
-		padding 30px 10px
-		align-items center
-
-		&-text
-	        width 100%
-
-	    &-img
-	    	width 100%
+        +below($mobile-width)
+            width auto
