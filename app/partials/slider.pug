@@ -1,4 +1,22 @@
-section.slider-section
-    .container
-        ul.slider
-            li.slider-item Slider Item
+
+-var url = "./apple-touch-icon.png"
+section.slider-section.container
+	.slider.owl-carousel
+		each val in {1:"red",2:"green",3:"blue",4:"black",5:"grey",6:"azure",7:"yellow"}
+			.slider-item(style={background: val})
+				each pic in [1,2,3,4,5]
+					a.event-pictures(
+                        data-lightbox='pictureGroup'+val,
+                        href=url,
+                        data-title="event "+val
+                    )
+
+				.description
+					p.description-header= val
+					p.description-body Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus
+
+
+				
+    				
+
+    			
