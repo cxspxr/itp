@@ -89,19 +89,19 @@ gulp.task('html', ['views', 'styles', 'scripts', 'images'], () => {
       removeScriptTypeAttributes: true,
       removeStyleLinkTypeAttributes: true
     })))
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('dist/public'));
 });
 
 gulp.task('images', () => {
   return gulp.src('app/images/**/*')
     .pipe($.cache($.imagemin()))
-    .pipe($.if(dev, gulp.dest('.tmp/images'), gulp.dest('dist/images')));
+    .pipe($.if(dev, gulp.dest('.tmp/images'), gulp.dest('dist/public/images')));
 });
 
 gulp.task('fonts', () => {
   return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2}', function (err) {})
     .concat('app/fonts/**/*'))
-    .pipe($.if(dev, gulp.dest('.tmp/fonts'), gulp.dest('dist/fonts')));
+    .pipe($.if(dev, gulp.dest('.tmp/fonts'), gulp.dest('dist/public/fonts')));
 });
 
 gulp.task('extras', () => {
@@ -111,7 +111,7 @@ gulp.task('extras', () => {
     '!app/*.pug'
   ], {
     dot: true
-  }).pipe(gulp.dest('dist'));
+  }).pipe(gulp.dest('dist/public'));
 });
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
@@ -149,7 +149,7 @@ gulp.task('serve:dist', ['default'], () => {
     notify: false,
     port: 9000,
     server: {
-      baseDir: ['dist']
+      baseDir: ['dist/public']
     }
   });
 });
