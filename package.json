@@ -1,4 +1,9 @@
 {
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "postinstall": "gulp"
+  },
   "private": true,
   "engines": {
     "node": ">=4"
