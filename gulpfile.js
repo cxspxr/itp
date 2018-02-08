@@ -125,7 +125,7 @@ gulp.task('clean', del.bind(null, ['.tmp', 'dist/public']));
 gulp.task('nodemon', function (cb) {
 	var started = false;
 	return nodemon({
-		script: 'dist/server.js'
+		script: './server.js'
 	}).on('start', function () {
 		if (!started) {
 			cb();

@@ -18,7 +18,7 @@ app.all('*', ensureDomain);
 
 app.use(compression());
 
-app.use(serveStatic(`${__dirname}/public`, {'extensions': ['html']}));
+app.use(serveStatic(`${__dirname}/dist/public`, {'extensions': ['html']}));
 
 app.listen(port, () => {
   console.log('Server running...');
