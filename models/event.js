@@ -1,7 +1,5 @@
 'use strict';
 
-const Picture = require('./picture.js');
-
 module.exports = (sequelize, DataTypes) => {
   var Event = sequelize.define('Event', {
     name: DataTypes.STRING,
@@ -10,12 +8,10 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
+          Event.hasMany(models.Picture, {as: "Pictures"});
       }
     }
   });
-
-  Event.hasMany(Picture, {as: 'Pictures'})
 
   return Event;
 };

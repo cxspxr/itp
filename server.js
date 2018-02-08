@@ -3,7 +3,7 @@ const serveStatic = require('serve-static');
 const compression = require('compression');
 const port = process.env.PORT || 3000;
 const domain =  process.env.DOMAIN;
-const models = require('models');
+const models = require('./models');
 
 function ensureDomain(req, res, next) {
   if (!domain || req.hostname === domain) {
