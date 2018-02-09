@@ -14,22 +14,40 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
       return queryInterface.bulkInsert('Events', [
         {
-          name: 'Event',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt veritatis sunt aliquam pariatur similique sint sit saepe. Quia dicta commodi nobis inventore numquam atque accusamus itaque facere, debitis architecto provident.',
-          date: (new Date(2011, 10, 7)).toMysqlFormat(),
-          picture: "https://image.freepik.com/free-photo/cute-cat-picture_1122-449.jpg"
-        },
-        {
-          name: 'Another event',
+          name: '1 подiя',
           description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam blanditiis, nobis similique. Dolorum assumenda facere inventore, voluptates iste veritatis aut quae nisi voluptatibus, aspernatur a magni quasi, illum eveniet, nam?',
           date: (new Date(2048, 10, 8)).toMysqlFormat(),
-          picture: "http://cdn.newsapi.com.au/image/v1/9fdbf585d17c95f7a31ccacdb6466af9"
+          picture: "http://www.immigrationnews.ca/wp-content/uploads/2017/07/students-retention-atlantic-canada.jpg"
         },
         {
-          name: 'Third Event',
+          name: '2 подiя',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam blanditiis, nobis similique. Dolorum assumenda facere inventore, voluptates iste veritatis aut quae nisi voluptatibus, aspernatur a magni quasi, illum eveniet, nam?',
+          date: (new Date(2048, 10, 8)).toMysqlFormat(),
+          picture: "http://www.ivg.it/photogallery_new/images/2018/01/patetta-euro-students-award-443473.660x368.jpg"
+        },
+        {
+          name: '3 подiя',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam blanditiis, nobis similique. Dolorum assumenda facere inventore, voluptates iste veritatis aut quae nisi voluptatibus, aspernatur a magni quasi, illum eveniet, nam?',
+          date: (new Date(2048, 10, 8)).toMysqlFormat(),
+          picture: "https://si.wsj.net/public/resources/images/WE-AB093_EARNIN_P_20160323143657.jpg"
+        },
+        {
+          name: '4 подiя',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam blanditiis, nobis similique. Dolorum assumenda facere inventore, voluptates iste veritatis aut quae nisi voluptatibus, aspernatur a magni quasi, illum eveniet, nam?',
+          date: (new Date(2048, 10, 8)).toMysqlFormat(),
+          picture: "http://i.huffpost.com/gen/785659/thumbs/o-COLLEGE-TOURS-facebook.jpg"
+        },
+        {
+          name: '5 подiя',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt veritatis sunt aliquam pariatur similique sint sit saepe. Quia dicta commodi nobis inventore numquam atque accusamus itaque facere, debitis architecto provident.',
+          date: (new Date(2011, 10, 7)).toMysqlFormat(),
+          picture: "https://www.gapyear.com/images/advertiser_files/13976378039_305a9b9967_o.jpg"
+        },
+        {
+          name: '6 подiя',
           description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque assumenda sapiente est obcaecati distinctio facere dolorem pariatur suscipit, quas libero ipsum. Eius saepe autem, voluptatibus veritatis quae explicabo nisi soluta.',
           date: (new Date(2023, 8, 7)).toMysqlFormat(),
-          picture: "https://media.wired.com/photos/598e35fb99d76447c4eb1f28/master/pass/phonepicutres-TA.jpg"
+          picture: "https://www.qualquarter.co.za/wp-content/uploads/2015/06/3_student-group.jpg"
         }], {});
   },
 
