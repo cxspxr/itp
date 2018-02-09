@@ -1,7 +1,6 @@
 module.exports = function() {
 	$(document).ready(function(){
 		$('.owl-carousel').owlCarousel({
-			nav:true,
 			responsive:{
 				0:{
 					items:1
