@@ -1,7 +1,6 @@
 module.exports = function() {
 	$(document).ready(function(){
 		$('.owl-carousel').owlCarousel({
-			nav:true,
 			responsive:{
 				0:{
 					items:1
@@ -14,9 +13,9 @@ module.exports = function() {
 				}
 			}
 		});
-	});
 
-	$('.owl-dot').click(function () {
-		owl.trigger('to.owl.carousel', [$(this).index(), 300]);
+    	$('.owl-dot').click(function () {
+    		owl.trigger('to.owl.carousel', [$(this).index(), 300]);
+    	});
 	});
 }
