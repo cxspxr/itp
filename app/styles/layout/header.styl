@@ -1,23 +1,42 @@
 .header
-    background-color grey
+    background-color white
 
-    &-nav
-        list-style-type none
-        margin 0
-        overflow hidden
-        display flex
-        justify-content space-between
-        padding 20px 0
+.nav
+    list-style-type none
+    margin 0
+    padding 0
+    overflow hidden
+    
+/*    &:last-child
+            border-right 1px solid #5cb85c*/
+            
+    .nav-logo
+        display inline
+        padding 30px 10px
 
-        &-items
-            a
+        img
+            height 70px
+
+            +below(1075px)
+                height 50px
+                margin 15px 0
+
+            +below(765px)
+                display none
+
+    .nav-item 
+        float right
+/*        border-left 1px solid #5cb85c*/
+        
+        /*+below(765px)
+            отменить float и поставить посередине*/
+        a
+            display block
+            color #5cb85c
+            text-align center
+            padding 30px 20px
+            text-decoration none
+
+            &:hover
+                background-color #5cb85c
                 color white
-                text-align center
-                padding 20px 20px
-                text-decoration none
-
-                +below($mobile-width)
-                    padding 20px 10px
-
-                &:hover
-                    background-color rgb(112, 92, 72)
