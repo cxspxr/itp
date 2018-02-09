@@ -22,7 +22,9 @@ app.set('views', 'dist');
 app.set('view engine', 'pug');
 
 router.get('/', function(req, res) {
-  models.Event.findAll().then(function(events) {
+  models.Event.findAll({
+      include: [models.Picture]
+  }).then(function(events) {
     res.render('index', {
       events: events
     });

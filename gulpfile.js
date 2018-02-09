@@ -104,7 +104,11 @@ gulp.task('nodemon', function (cb) {
 			cb();
 			started = true;
 		}
-	});
+	}).on('restart', function(){
+		gulp.src('server.js')
+			.pipe(reload({stream: true}))
+			.pipe(notify('Reloading page, please wait...'));
+	})
 });
 gulp.task('serve', () => {
   runSequence(['nodemon'], ['clean'], ['prod'], () => {
@@ -120,8 +124,6 @@ gulp.task('serve', () => {
       'app/scripts/images/**/*'
     ]).on('change', reload);
 
-    gulp.watch('server.js').on('change', reload);
-    gulp.watch('models/*.js').on('change', reload);
     gulp.watch('app/**/*.pug', ['prod']);
     gulp.watch('app/styles/**/*.styl', ['styles']);
     gulp.watch('app/scripts/**/*.js', ['scripts']);

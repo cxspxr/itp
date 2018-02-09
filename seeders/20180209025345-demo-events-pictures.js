@@ -30,7 +30,7 @@ module.exports = {
         {
           path: 'http://www.theamazingpics.com/wp-content/uploads/2014/05/Amazing-Picture-of-A-Japanese-Garden-in-Portland-USA.jpg',
           event_id: 3
-        }
+        }], {});
   },
 
   down: (queryInterface, Sequelize) => {

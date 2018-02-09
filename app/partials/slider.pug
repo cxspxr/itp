@@ -1,15 +1,13 @@
-
--var url = "images/apple-touch-icon.png"
 section.slider-section.container
     .slider.owl-carousel
         each event in events 
             .slider-item(style={background: 'url(' + event.picture + ')'})
-                //- each pic in [1,2,3,4,5]
-                //-     a.event-pictures(
-                //-         data-lightbox='pictureGroup'+val,
-                //-         href=url,
-                //-         data-title="event "+val
-                //-     )
+                each pic in event.Pictures
+                    a.slider-item-picture(
+                        href=pic.path,
+                        data-title=event.description
+                        data-lightbox='pictureGroup'+event.id
+                    )
 
                 .description
                     p.description-header= event.name

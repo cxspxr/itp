@@ -9,12 +9,13 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     timestamps: false,
     classMethods: {
-      associate: function(models) {
-          Event.hasMany(models.Picture, {as: "Pictures"});
-      }
+
     }
   });
 
+  Event.associate = function(models) {
+      Event.hasMany(models.Picture, {foreignKey: 'event_id'});
+  }
   Event.prototype.getShort = function() {
       return this.description.substring(0, 50);
   }
