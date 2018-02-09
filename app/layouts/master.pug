@@ -6,23 +6,13 @@ html.no-js(lang='')
         title itp
         link(rel='apple-touch-icon', href='images/apple-touch-icon.png')
         // Place favicon.ico in the root directory
-        // build:css styles/vendor.css
-        // bower:css
-        // endbower
-        // endbuild
-        // build:css styles/main.css
+        
         link(rel='stylesheet', href='styles/main.css')
-        // endbuild
-        // build:js scripts/vendor/modernizr.js
-        script(src='/bower_components/modernizr/modernizr.js')
-        // endbuild
-        // build:css scripts/vendor/owl.carousel.css
-        link(rel="stylesheet", href="/bower_components/owl.carousel/dist/assets/owl.carousel.min.css")
-        link(rel="stylesheet", href="/bower_components/owl.carousel/dist/assets/owl.theme.default.min.css")
-        // endbuild
-        // build:css scripts/vendor/lightbox.css
-        link(href="/bower_components/lightbox2/dist/css/lightbox.min.css", rel="stylesheet")
-        // endbuild
+        
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css")
+        link(href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/css/lightbox.min.css", rel="stylesheet")
+
     body
         <!--[if lt IE 10]>
             p.browserupgrade
@@ -35,14 +25,9 @@ html.no-js(lang='')
         
         block content
                 
-        // build:js scripts/vendor.js
-        // bower:js
-        script(src='/bower_components/modernizr/modernizr.js')
-        script(src='/bower_components/jquery/dist/jquery.min.js')
-        script(src='/bower_components/owl.carousel/dist/owl.carousel.min.js')
-        script(src='/bower_components/lightbox2/dist/js/lightbox.min.js')
-        // endbower
-        // endbuild
-        // build:js scripts/main.js
-        script(src='scripts/bundle.js')
-        // endbuild
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/js/lightbox.min.js')
+
+        script(src='scripts/main.js')

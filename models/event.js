@@ -7,12 +7,12 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.TEXT,
     date: DataTypes.DATE
   }, {
+    timestamps: false,
     classMethods: {
       associate: function(models) {
           Event.hasMany(models.Picture, {as: "Pictures"});
       }
-    },
-    timestamps: false
+    }
   });
 
   return Event;

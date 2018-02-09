@@ -5,6 +5,7 @@ const port = process.env.PORT || 3000;
 const domain =  process.env.DOMAIN;
 const models = require('./models');
 const router  = express.Router();
+const path = require('path');
 
 function ensureDomain(req, res, next) {
   if (!domain || req.hostname === domain) {
@@ -17,16 +18,19 @@ function ensureDomain(req, res, next) {
 const app = express();
 
 app.all('*', ensureDomain);
+app.set('views', 'dist');
+app.set('view engine', 'pug');
 
 router.get('/', function(req, res) {
-  models.Event.findAll({
-    include: [ models.Picture ]
-  }).then(function(users) {
+  models.Event.findAll().then(function(events) {
     res.render('index', {
       events: events
     });
   });
 });
+
+app.use('/', router);
+app.use(express.static(__dirname + '/dist'));
 
 app.use(compression());
 
