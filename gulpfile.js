@@ -42,7 +42,7 @@ gulp.task('scripts', () => {
         .pipe(source('main.js'))
         .pipe($.plumber())
         .pipe(buffer())
-        .pipe($.uglify({compress: {drop_console: true}}))
+        .pipe($.uglify({compress: {drop_console: false}}))
         .pipe($.sourcemaps.init({loadMaps: true}))
         .pipe($.if(dev, $.sourcemaps.write('.')))
         .pipe(gulp.dest('dist/scripts'))
@@ -104,10 +104,6 @@ gulp.task('nodemon', function (cb) {
 			cb();
 			started = true;
 		}
-	}).on('restart', function(){
-		gulp.src('server.js')
-			.pipe(reload({stream: true}))
-			.pipe(notify('Reloading page, please wait...'));
 	})
 });
 gulp.task('serve', () => {
