@@ -1,6 +1,19 @@
 .poster
-    border-bottom 1px solid black
-    padding 20px 0
+    position relative
+    padding 100px 0
+    background-image url("../images/student.png")
+    background-repeat no-repeat
+    background-size cover
+    height calc(100vh - 88px)
+    color white
+
+    &-background
+        position absolute
+        left 0
+        right 0
+        top 0 
+        bottom 0
+        background-color rgba(9, 49, 71, .6)
 
     &-container
         display flex
@@ -11,20 +24,9 @@
             align-items center
 
     &-text
-        width 100%
+        margin-left 30px
+        z-index 1
 
-    &-img
-        width 100%
-
-    &-text
-        width 70%
+    &-heading
         text-align center
-
-        +below($mobile-width)
-            width auto
-
-    &-img
-    	width 30%
-
-        +below($mobile-width)
-            width auto
+        z-index 1
