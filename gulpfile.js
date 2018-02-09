@@ -27,8 +27,7 @@ gulp.task('styles', () => {
     }))
     .pipe($.autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']}))
     .pipe($.if(dev, $.sourcemaps.write()))
-    .pipe(gulp.dest('dist/styles'))
-    .pipe(reload({stream: true}));
+    .pipe(gulp.dest('dist/styles'));
 });
 
 gulp.task('scripts', () => {
@@ -45,8 +44,7 @@ gulp.task('scripts', () => {
         .pipe($.uglify({compress: {drop_console: false}}))
         .pipe($.sourcemaps.init({loadMaps: true}))
         .pipe($.if(dev, $.sourcemaps.write('.')))
-        .pipe(gulp.dest('dist/scripts'))
-        .pipe(reload({stream: true}));
+        .pipe(gulp.dest('dist/scripts'));
 });
 
 function lint(files) {
@@ -104,21 +102,22 @@ gulp.task('nodemon', function (cb) {
 			cb();
 			started = true;
 		}
-	})
+	}).on('restart', function onRestart() {
+      setTimeout(function() {
+        reload({
+          stream: false
+        });
+      }, 500);
+    });
 });
 gulp.task('serve', () => {
   runSequence(['nodemon'], ['clean'], ['prod'], () => {
     browserSync.init({
       notify: false,
       port: 9000,
-      proxy: 'localhost:3000'
+      proxy: 'localhost:3000',
+      files: 'dist/**/*'
     });
-
-    gulp.watch([
-      'app/*.html',
-      'app/images/**/*',
-      'app/scripts/images/**/*'
-    ]).on('change', reload);
 
     gulp.watch('app/**/*.pug', ['prod']);
     gulp.watch('app/styles/**/*.styl', ['styles']);
