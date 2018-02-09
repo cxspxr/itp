@@ -27,6 +27,7 @@ gulp.task('styles', () => {
     }))
     .pipe($.autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']}))
     .pipe($.if(dev, $.sourcemaps.write()))
+    .pipe(reload({stream: true}))
     .pipe(gulp.dest('dist/styles'));
 });
 
@@ -64,8 +65,9 @@ gulp.task('lint:test', () => {
     .pipe(gulp.dest('test/spec'));
 });
 
-gulp.task('prod', ['styles', 'scripts', 'images', 'vendorimages'], () => {
+gulp.task('prod', () => {
   return gulp.src(['app/*.ico', 'app/**/*.pug'])
+    .pipe(reload({stream: true}))
     .pipe(gulp.dest('dist'))
 });
 
@@ -107,16 +109,15 @@ gulp.task('nodemon', function (cb) {
         reload({
           stream: false
         });
-      }, 500);
+    }, 2000);
     });
 });
 gulp.task('serve', () => {
-  runSequence(['nodemon'], ['clean'], ['prod'], () => {
+  runSequence(['nodemon'], ['clean'], ['prod', 'styles', 'scripts', 'images', 'vendorimages'], () => {
     browserSync.init({
       notify: false,
       port: 9000,
-      proxy: 'localhost:3000',
-      files: 'dist/**/*'
+      proxy: 'localhost:3000'
     });
 
     gulp.watch('app/**/*.pug', ['prod']);
