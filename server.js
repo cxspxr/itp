@@ -36,6 +36,8 @@ app.use(express.static(__dirname + '/dist'));
 
 app.use(compression());
 
-app.listen(port, () => {
-  console.log('Server running...');
+models.sequelize.sync().then(function() {
+    app.listen(port, () => {
+      console.log('Server running...');
+    });
 });
