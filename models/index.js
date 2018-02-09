@@ -12,7 +12,7 @@ if (config.use_env_variable) {
   var sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
   if (config.url) {
-      var sequelize = new Sequelize(url);
+      var sequelize = new Sequelize(config.url);
   } else {
       var sequelize = new Sequelize(config.database, config.username, config.password, config);
   }
