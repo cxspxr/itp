@@ -15,5 +15,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
 
+  Event.prototype.getShort = function() {
+      return this.description.substring(0, 50);
+  }
+
   return Event;
 };

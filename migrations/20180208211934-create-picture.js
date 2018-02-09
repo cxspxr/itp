@@ -10,6 +10,13 @@ module.exports = {
       },
       path: {
         type: Sequelize.STRING
+      },
+      user_id: {
+            type: Sequelize.INTEGER,
+            references: {
+                model: "Events",
+                key: "id"
+            }
       }
     });
   },

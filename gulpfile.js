@@ -93,7 +93,7 @@ gulp.task('extras', () => {
   }).pipe(gulp.dest('dist'));
 });
 
-gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
+gulp.task('clean', del.bind(null, ['dist']));
 
 gulp.task('nodemon', function (cb) {
 	var started = false;
@@ -120,6 +120,8 @@ gulp.task('serve', () => {
       'app/scripts/images/**/*'
     ]).on('change', reload);
 
+    gulp.watch('server.js').on('change', reload);
+    gulp.watch('models/*.js').on('change', reload);
     gulp.watch('app/**/*.pug', ['prod']);
     gulp.watch('app/styles/**/*.styl', ['styles']);
     gulp.watch('app/scripts/**/*.js', ['scripts']);
