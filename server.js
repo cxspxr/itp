@@ -26,6 +26,11 @@ app.all('*', ensureDomain);
 app.set('views', 'dist');
 app.set('view engine', 'pug');
 
+
+app.use(compression());
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(cookieParser());
+
 app.use('/', router);
 app.use(express.static(__dirname + '/dist'));
 
@@ -35,10 +40,6 @@ app.use(session({
   saveUninitialized: false
 }));
 
-app.use(compression());
-app.use(express.urlencoded());
-app.use(bodyParser());
-app.use(cookieParser());
 
 if ('development' === process.env.NODE_ENV) {
     app.use(errorHandler());

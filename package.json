@@ -41,6 +41,7 @@
     "express": "^4.16.2",
     "express-error-handler": "^1.1.0",
     "express-session": "^1.15.6",
+    "express-validator": "^5.0.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.0.1",
     "gulp-babel": "^6.1.1",

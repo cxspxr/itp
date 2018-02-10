@@ -1,10 +1,13 @@
 section.form-section
-	.container.form-container
-		p.form-header Підписуйтесь на наші найцікавіші новини! 
-		form(action="", method="post")
-			.form-group
-				input(class="text-input" type="text", placeholder="Iм'я")
-			.form-group
-				input(class="text-input" type="text", placeholder="E-mail")
-			.form-group
-				button(class="form-button" type="submit") Підписатися
+    .container.form-container
+        if errors
+            each error, key in errors 
+                p= error
+        p.form-header Підписуйтесь на наші найцікавіші новини! 
+        form(action="/subscribe", method="post")
+            .form-group
+                input(class="text-input" type="text", placeholder="Iм'я", name="name", required)
+            .form-group
+                input(class="text-input" type="text", placeholder="E-mail", name="email", required)
+            .form-group
+                button(class="form-button" type="submit") Підписатися
