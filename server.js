@@ -4,8 +4,10 @@ const compression = require('compression');
 const port = process.env.PORT || 3000;
 const domain =  process.env.DOMAIN;
 const models = require('./models');
-const router  = express.Router();
 const path = require('path');
+const router = require('./routes.js');
+const session = require('express-session');
+require('dotenv').load();
 
 function ensureDomain(req, res, next) {
   if (!domain || req.hostname === domain) {
@@ -21,18 +23,14 @@ app.all('*', ensureDomain);
 app.set('views', 'dist');
 app.set('view engine', 'pug');
 
-router.get('/', function(req, res) {
-  models.Event.findAll({
-      include: [models.Picture]
-  }).then(function(events) {
-    res.render('index', {
-      events: events
-    });
-  });
-});
-
 app.use('/', router);
 app.use(express.static(__dirname + '/dist'));
+
+app.use(session({
+  secret: process.env.SESSION_KEY,
+  resave: true,
+  saveUninitialized: false
+}));
 
 app.use(compression());
 

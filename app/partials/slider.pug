@@ -1,6 +1,6 @@
 section.slider-section.container
     h3.partial-header Нещодавні події
-    .slider.owl-carousel
+    .slider.owl-theme.owl-carousel
         each event in events 
             .slider-item(style={background: 'url(' + event.picture + ')'})
                 each pic in event.Pictures
