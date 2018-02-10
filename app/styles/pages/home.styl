@@ -1,18 +1,21 @@
 .poster
     position relative
-    padding 100px 0
+    padding 20px 0
     background-image url("../images/student.png")
     background-repeat no-repeat
     background-size cover
-    height calc(100vh - 88px)
+    height calc(80vh - 88px)
     color white
+    display flex
+    align-items center
+    justify-content center
 
     &-container
         display flex
+        align-items center
 
         +below($mobile-width)
             flex-direction column
-            padding 30px 10px
             align-items center
 
     &-text

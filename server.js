@@ -6,6 +6,8 @@ const domain =  process.env.DOMAIN;
 const models = require('./models');
 const router  = express.Router();
 const path = require('path');
+const session = require('express-session');
+require('dotenv').load();
 
 function ensureDomain(req, res, next) {
   if (!domain || req.hostname === domain) {
@@ -33,6 +35,12 @@ router.get('/', function(req, res) {
 
 app.use('/', router);
 app.use(express.static(__dirname + '/dist'));
+
+app.use(session({
+  secret: process.env.SESSION_KEY,
+  resave: true,
+  saveUninitialized: false
+}));
 
 app.use(compression());
 
