@@ -9,6 +9,7 @@ const router = require('./routes.js');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const errorHandler = require('express-error-handler');
 require('dotenv').load();
 
 function ensureDomain(req, res, next) {
@@ -38,6 +39,10 @@ app.use(compression());
 app.use(express.urlencoded());
 app.use(bodyParser());
 app.use(cookieParser());
+
+if ('development' === process.env.NODE_ENV) {
+    app.use(errorHandler());
+}
 
 models.sequelize.sync().then(function() {
     app.listen(port, () => {
