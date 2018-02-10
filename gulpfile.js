@@ -147,7 +147,7 @@ gulp.task('serve:test', ['scripts'], () => {
   gulp.watch('test/spec/**/*.js', ['lint:test']);
 });
 
-gulp.task('build', ['lint', 'prod', 'extras'], () => {
+gulp.task('build', ['lint', 'prod', 'extras', 'styles', 'scripts', 'images'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
