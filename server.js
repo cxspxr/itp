@@ -25,7 +25,8 @@ app.set('view engine', 'pug');
 
 router.get('/', function(req, res) {
   models.Event.findAll({
-      include: [models.Picture]
+      include: [models.Picture],
+      order: [['date', 'DESC']]
   }).then(function(events) {
     res.render('index', {
       events: events
