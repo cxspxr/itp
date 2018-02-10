@@ -7,6 +7,8 @@ const models = require('./models');
 const path = require('path');
 const router = require('./routes.js');
 const session = require('express-session');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 require('dotenv').load();
 
 function ensureDomain(req, res, next) {
@@ -33,6 +35,9 @@ app.use(session({
 }));
 
 app.use(compression());
+app.use(express.urlencoded());
+app.use(bodyParser());
+app.use(cookieParser());
 
 models.sequelize.sync().then(function() {
     app.listen(port, () => {
