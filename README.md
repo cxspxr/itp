@@ -11,7 +11,7 @@ npm i -g gulp
 
 ### Sequelize installation (it's ORM for NodeJS) (run with sudoer permissions)
 ```bash
-npm i -g sequelize
+npm i -g sequelize-cli sequelize
 ```
 
 ### Dependencies installation
@@ -85,3 +85,51 @@ Please, **do** use modular stylus for styles.
 Please, do **not** use `Windows`.  
 Please, **follow** recommendation above.  
 Gosh, **make sure** you don't use `CRLF` if you are still on `Windows`.  
+
+## Technologies used
+
+- [x] Coding:
+* `NodeJS`
+* `express.js`
+* `sequelize`
+* `babel``
+* `stylus`
+* `rupture` for stylus `media`
+* `pug`
+* `mysql2` as `Noe` driver for `mysql`
+* `OwlCarousel2`, `lightbox2`
+* `modernizr`, `jQuery` (just for owlcarousel shit)
+
+- [ ] Auth:
+* `express-session`
+* `express-mysql-session` as a store
+* `body-parser`
+* `cookie-pasrer`
+* `passport.js`
+* `passport-local` for passport local strategy
+* `bcrypt` for hashing
+
+- [x] Development:
+* `heroku` for deploying
+* `npm`
+* `gulp`
+* `browserify`
+* `browser-sync`
+* `gulp-nodemon` for handling `express` server
+* `gulp-sourcemaps`
+* `gulp-uglify`
+* `gulp-eslint`
+* `gulp-autoprefixer`
+* `gulp-load-plugins`
+* `gulp-size`, `gulp-imagemin`, `compression` for compression
+* `gulp-plumber`
+* `gulp-if`
+* `gulp-cache`
+* `del`
+* `dotenv` for `.env`
+* `vinyl-buffer`, `vinyl-source-stream`
+
+- [x] Dropped during dev:
+* `wiredep`
+* `cssnano`
+* `bower`
