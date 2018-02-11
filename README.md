@@ -73,4 +73,9 @@ You should write or use separate files to work with and require it as it seen wi
 ## Recommendations (skip if you are typical Windows)
 
 Please, do **not** use local vendors, except those which are managed by `bower` or `npm`.
-Please, do **not** use
+Please, **do** use modular babel for scripts.
+Please, **do** use modular pug for views.
+Please, **do** use modular stylus for styles.
+Please, do **not** use `Windows`.
+Please, **follow** recommendation above.
+Gosh, **make sure** you don't use `CRLF` if you are still on `Windows`.
