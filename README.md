@@ -92,7 +92,7 @@ Gosh, **make sure** you don't use `CRLF` if you are still on `Windows`.
 * `NodeJS`
 * `express.js`
 * `sequelize`
-* `babel``
+* `babel`
 * `stylus`
 * `rupture` for stylus `media`
 * `pug`
