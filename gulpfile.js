@@ -1,4 +1,3 @@
-// generated on 2018-02-07 using generator-webapp 3.0.1
 const gulp = require('gulp');
 const gulpLoadPlugins = require('gulp-load-plugins');
 const browserSync = require('browser-sync').create();
@@ -59,10 +58,6 @@ function lint(files) {
 gulp.task('lint', () => {
   return lint('app/scripts/**/*.js')
     .pipe(gulp.dest('app/scripts'));
-});
-gulp.task('lint:test', () => {
-  return lint('test/spec/**/*.js')
-    .pipe(gulp.dest('test/spec'));
 });
 
 gulp.task('prod', () => {
@@ -128,23 +123,8 @@ gulp.task('serve', () => {
   });
 });
 
-gulp.task('serve:test', ['scripts'], () => {
-  browserSync.init({
-    notify: false,
-    port: 9000,
-    ui: false,
-    server: {
-      baseDir: 'test',
-      routes: {
-        '/scripts': '.tmp/scripts',
-        '/bower_components': 'bower_components'
-      }
-    }
-  });
-
   gulp.watch('app/scripts/**/*.js', ['scripts']);
   gulp.watch(['test/spec/**/*.js', 'test/index.html']).on('change', reload);
-  gulp.watch('test/spec/**/*.js', ['lint:test']);
 });
 
 gulp.task('build', ['lint', 'prod', 'extras', 'styles', 'scripts', 'images'], () => {

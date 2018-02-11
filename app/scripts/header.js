@@ -8,17 +8,17 @@ module.exports = function() {
 		// );
 			$('#contacts').click(function(){
 				$('html, body').animate({
-    				scrollTop: $("#contacts-anchor").offset().top
+    				scrollTop: $('#contacts-anchor').offset().top
 				}, 1000);
 			});
 			$('#events').click(function(){
 				$('html, body').animate({
-    				scrollTop: $(".slider-section").offset().top
+    				scrollTop: $('.slider-section').offset().top
 				}, 1000);
 			});
 			$('#about').click(function(){
 				$('html, body').animate({
-    				scrollTop: $(".about").offset().top
+    				scrollTop: $('.about').offset().top
 				}, 1000);
 			});
 		});
