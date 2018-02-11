@@ -73,6 +73,11 @@ You should write or use separate files to work with and require it as it seen wi
 ## Recommendations (skip if you are typical Windows)
 
 Please, do **not** use local vendors, except those which are managed by `bower` or `npm`.
+Please, **one action** = **one commit**.
+Please, **use** your local branches if your task can't fit in **one action** = **one commit**.
+Please, do **not**, for god's sake, push your local branches. **Your** task = **your** branch. Nobody will manage your local branches here.
+Please, **use** `dev` branch to merge your local branch to it and push to remote.
+Please, do **not** use `master`, I am on it. (on managing, not master, haha)
 Please, **do** use modular babel for scripts.
 Please, **do** use modular pug for views.
 Please, **do** use modular stylus for styles.
